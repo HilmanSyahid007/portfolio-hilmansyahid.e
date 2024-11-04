@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hilman Syahid Effrianto</title>
+    <title>MyPortfolio - Hilman Syahid Effrianto</title>
     <link rel="stylesheet" href="src/output.css">
+    <script>
+        document.documentElement.classList.toggle(
+  'dark',
+  localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+)
+    </script>
 </head>
 <body>
     <!-- Header Section Start -->
@@ -21,25 +27,39 @@
                         <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
                     </button>
 
-                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-100 lg:dark:bg-transparent">
                         <ul class="block lg:flex">
                             <li class="group">
-                                <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Home</a>
+                                <a href="#home" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Home</a>
                             </li>
                             <li class="group">
-                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">About Me</a>
+                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">About Me</a>
                             </li>
                             <li class="group">
-                                <a href="#portfolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Portfolio</a>
+                                <a href="#portfolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio</a>
                             </li>
                             <li class="group">
-                                <a href="#clients" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Games</a>
+                                <a href="#clients" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Games</a>
                             </li>
                             <li class="group">
-                                <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Blog</a>
+                                <a href="#blog" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Blog</a>
                             </li>
                             <li class="group">
-                                <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                                <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
+                            </li>
+                            <li class="mt-3 lg:mt-0 flex items-center pl-8">
+                                <div class="flex">
+                                    <span class="mr-2 text-sm text-slate-500">light</span>
+                                    <input type="checkbox" class="hidden" id="dark-toggle">
+                                    <label for="dark-toggle">
+                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-sm text-slate-500">dark</span>
+                                </div>
                             </li>
                         </ul>
                     </nav>
@@ -50,24 +70,24 @@
     <!-- Header Section End -->
  
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h1 class="text-base font-semibold text-primary md:text-xl">Hallo 👋, My Name Is
-                        <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl">Hilman Syahid Effrianto</span>
+                        <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white">Hilman Syahid Effrianto</span>
                     </h1>
 
-                    <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Student & <span class="text-dark">IT Enthusiast</span></h2>
+                    <h2 class="font-medium text-secondary text-lg mb-5 lg:text-2xl">Student & <span class="text-dark dark:text-white">IT Enthusiast</span></h2>
 
-                    <p class="font-medium text-secondary mb-10 leading-relaxed">Be a person that you have. Learning web programming was it fun  & <span class="text-dark font-bold">FANTASTIC</span> right!</p>
+                    <p class="font-medium text-secondary mb-10 leading-relaxed">Be a person that you have. Learning web programming was it fun  & <span class="text-dark font-bold dark:text-white">FANTASTIC</span> right!</p>
 
                     <a href="#" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact Me</a>
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2">
                     <div class="relative mt-10 lg:mt-9 lg:right-0">
-                        <img src="src/img/foto1.png" alt="Hilman Syahid Effrianto" class="max-w-full mx-auto">
-                        <span class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
+                        <img src="src/img/foto1.png" alt="Hilman Syahid Effrianto" class="relative z-10 max-w-full mx-auto">
+                        <span class="absolute -bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
                             <svg widt="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#14b8a6" d="M48,-52.2C59.2,-36.8,63.3,-18.4,61.6,-1.7C59.9,15,52.5,30,41.2,39.8C30,49.6,15,54.2,1.1,53C-12.7,51.9,-25.5,45.1,-40.4,35.3C-55.3,25.5,-72.4,12.7,-73.3,-0.9C-74.3,-14.6,-59.1,-29.3,-44.2,-44.8C-29.3,-60.2,-14.6,-76.6,1.9,-78.4C18.4,-80.3,36.8,-67.7,48,-52.2Z" transform="translate(100 100)scale(1.1)" />
                               </svg>
@@ -80,16 +100,16 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32">
+    <section id="about" class="pt-36 pb-32 dark:bg-dark">   
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2 ">
                     <h4 class="font-bold uppercase text-primary text-lg mb-3 lg:text-4xl">About Me</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-lg">Let you know about me!</h2>
+                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-lg dark:text-white">Let you know about me!</h2>
                     <p class="font-medium text-base text-secondary max-w-xl">I am a student of Polytechnic of Manufacturing Bandung with the major of Automation Engineering with industrial informatics engineering technology study program. As a programmer with 6 months and 2 years of experience. By creating an application that can help MSMEs, Universities, and Islamic Boarding Schools. It is proven that the collaboration between MSMEs, Universities, Islamic Boarding Schools and the local government can help smooth their operations when i was in high school.</p>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">Let's Friend </h3>
+                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">Let's Friend </h3>
                     <p class="font-medium text-secondary mb-6 lg:text-lg">Follow my social media to explore about me. If you intrested to know about me</p>
                     <div class="flex items-center">
                         <!-- Instagram -->
@@ -126,13 +146,13 @@
     <!-- About Section End -->
 
     <!-- Portfolio Section Start -->
-     <section id="portfolio" class="pt-36 pb-16 bg-slate-100">
+     <section id="portfolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800">
         <div class="conatiner">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Portfolio</h4>
                     <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl
-                    lg:text-5xl">Recent Project</h2>
+                    lg:text-5xl dark:text-white">Recent Project</h2>
                     <p class="font-medium text-md text-secondary md:text-lg">My latest project that I created with my team. from a landing page for a company to a student association website. 
                     </p>
                 </div>
@@ -143,14 +163,14 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="src/img/portfolio/ababil-cctv.png" alt="Ababil Tech" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Ababil Tech</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Ababil Tech</h3>
                     <p class="font-medium text-base text-secondary">The website landing page that i created for the company name Ababil Tech. The companies working in the field of technology and security.</p>
                 </div>
                 <div class="mb-12 p-4 md:w-1/2">
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="src/img/portfolio/karhutla.png" alt="KARHUTLA" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">KARHUTLA</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">KARHUTLA</h3>
                     <p class="font-medium text-base text-secondary">The website i created for campus project. A website that works to report forest fires and stop the perpetrators of forest fires.</p>
                 </div>
                 <!-- <div class="mb-12 p-4 md:w-1/2">
@@ -164,7 +184,7 @@
                     <div class="rounded-md shadow-md overflow-hidden">
                         <img src="src/img/portfolio/himamo.png" alt="HIMAMO" width="w-full">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3">HIMAMO Website</h3>
+                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">HIMAMO Website</h3>
                     <p class="font-medium text-base text-secondary">The website was created by Web Development and UI/UX Team from HIMAMO. A website where students can view information and documents in the form of assignments and learning modules.</p>
                 </div>
             </div>
@@ -173,13 +193,13 @@
     <!-- Portfolio Section End -->
 
     <!-- Clients Section Start -->
-     <section id="clients" class="pt-36 pb-32 bg-slate-800">
+     <section id="clients" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300">
         <div class="conatiner">
             <div class="w-full px-4">
                 <div class="mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Games</h4>
                     <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl
-                    lg:text-5xl">The game that is always played</h2>
+                    lg:text-5xl dark:text-dark">The game that is always played</h2>
                     <p class="font-medium text-md text-secondary md:text-lg">There is the game i always played with my friends for refreshing.
                     </p>
                 </div>
@@ -212,13 +232,13 @@
     <!-- clients Section End -->
 
     <!-- Blog Section Start -->
-     <section id="blog" class="pt-36 pb-32 bg-slate-100">
+     <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Blog</h4>
                     <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl
-                    lg:text-5xl">Recent Posts</h2>
+                    lg:text-5xl dark:text-white">Recent Posts</h2>
                     <p class="font-medium text-md text-secondary md:text-lg">My recent post about my daily life as a student & IT enthusiast.
                     </p>
                 </div>
@@ -226,11 +246,11 @@
 
             <div class="flex flex-wrap">
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
                         <img src="src/img/blog/gaming.jpg" alt="keamanan" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Gaming with passion
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">Gaming with passion
                                 </a>
                                 </h3>
                             <p class="font-medium text-base text-secondary mb-6">Playing game with my friends for passion and refreshing to relieving fatigue after school and working.</p>
@@ -239,11 +259,11 @@
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
                         <img src="src/img/blog/code.jpg" alt="monitoring" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Learn more about Programming</a>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">Learn more about Programming</a>
                                 </h3>
                             <p class="font-medium text-base text-secondary mb-6">To become the great programmer. I used always learn in youtube and mentor that have a experience.</p>
                             <!-- <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Read more</a> -->
@@ -251,11 +271,11 @@
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800">
                         <img src="src/img/blog/mentor.jpg" alt="kerjasama" class="w-full">
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate">Become a mentor of web development in student activity unit</a>
+                                <a href="#" class="block mb-3 font-semibold text-xl text-dark hover:text-primary truncate dark:text-white">Become a mentor of web development in student activity unit</a>
                                 </h3>
                             <p class="font-medium text-base text-secondary mb-6">I was a mentor of web development in student activity unit ATI</p>
                             <!-- <a href="#" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80">Read more</a> -->
@@ -268,14 +288,14 @@
     <!-- Blog Section Start -->
 
     <!-- Contact Section Start -->
-     <section id="contact" class="pt-36 pb-32">
+     <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="w-full px-4">
                     <div class="max-w-xl mx-auto text-center mb-16">
                         <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
                         <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl
-                        lg:text-5xl">Contact Me</h2>
+                        lg:text-5xl dark:text-white">Contact Me</h2>
                         <p class="font-medium text-md text-secondary md:text-lg">Please insert your name, email & message that you want to write!
                         </p>
                     </div>
@@ -389,6 +409,12 @@
         </div>
      </footer>
     <!-- Footer Section End -->
+
+    <!-- Back to top Start-->
+     <a href="#home" class="fixed bottom-4 right-4 z-[9999] h-14 w-14 rounded-full bg-primary p-4 justify-center items-center hover:animate-pulse hidden" id="to-top">
+        <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45  mt-2"></span>
+     </a>
+    <!-- Back to top End-->
 
     <script src="src/js/script.js"></script>
 </body>
