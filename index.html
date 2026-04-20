@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,49 +9,72 @@
     <link rel="stylesheet" href="src/output.css">
     <script>
         document.documentElement.classList.toggle(
-  'dark',
-  localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-)
+            'dark',
+            localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        )
     </script>
     <style>
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
+
         .float-animation {
             animation: float 6s ease-in-out infinite;
         }
+
         .text-gradient {
             background: linear-gradient(to right, #14b8a6, #3b82f6, #8b5cf6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+
         .typing-cursor::after {
             content: '|';
             animation: blink 1s infinite;
         }
+
         @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0; }
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
         }
+
         body {
             transition: background-color 0.3s ease, color 0.3s ease;
         }
+
         .section-reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease-out;
         }
+
         .reveal-visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
+
 <body>
     <!-- Header Section Start -->
-     <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
         <div class="container">
             <div class="flex items-center justify-between relative">
                 <div class="px-4">
@@ -63,41 +87,67 @@
                         <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
                     </button>
 
-                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-100 lg:dark:bg-transparent">
+                    <nav id="nav-menu"
+                        class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-100 lg:dark:bg-transparent">
                         <ul class="block lg:flex">
                             <li class="group">
-                                <a href="#home" class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Home</a>
+                                <a href="#home"
+                                    class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Home</a>
                             </li>
                             <li class="group">
-                                <a href="#about" class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">About Me</a>
+                                <a href="#about"
+                                    class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">About
+                                    Me</a>
                             </li>
                             <li class="group">
-                                <a href="#portfolio" class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Portfolio</a>
+                                <a href="#portfolio"
+                                    class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Portfolio</a>
                             </li>
                             <li class="group">
-                                <a href="#skills" class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Skills</a>
+                                <a href="#skills"
+                                    class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Skills</a>
                             </li>
                             <li class="group">
-                                <a href="#blog" class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Blog</a>
+                                <a href="#blog"
+                                    class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Blog</a>
                             </li>
                             <li class="group">
-                                <a href="#contact" class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Contact</a>
+                                <a href="#contact"
+                                    class="nav-link text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white transition duration-300">Contact</a>
                             </li>
                             <li class="mt-3 lg:mt-0 flex items-center pl-8">
-                                 <div class="flex">
+                                <div class="flex">
                                     <!-- Sun Icon -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500 mr-2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                                    
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-slate-500 mr-2">
+                                        <circle cx="12" cy="12" r="5"></circle>
+                                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                    </svg>
+
                                     <input type="checkbox" class="hidden" id="dark-toggle">
                                     <label for="dark-toggle">
-                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
-                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
+                                        <div
+                                            class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                                            <div
+                                                class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out">
                                             </div>
                                         </div>
                                     </label>
 
                                     <!-- Moon Icon -->
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-slate-500 ml-2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="text-slate-500 ml-2">
+                                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                    </svg>
                                 </div>
                             </li>
                         </ul>
@@ -105,16 +155,18 @@
                 </div>
             </div>
         </div>
-     </header>
+    </header>
     <!-- Header Section End -->
- 
+
     <!-- Hero Section Start -->
     <section id="home" class="pt-36 dark:bg-dark section-reveal">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
                     <h1 class="text-base font-semibold text-primary md:text-xl">Hallo 👋, My Name Is
-                        <span class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white text-gradient">Hilman Syahid 
+                        <span
+                            class="block font-bold text-dark text-4xl mt-1 lg:text-5xl dark:text-white text-gradient">Hilman
+                            Syahid
                             Effrianto</span>
                     </h1>
 
@@ -122,18 +174,26 @@
                         <span id="typing-text" class="text-dark dark:text-white typing-cursor"></span>
                     </h2>
 
-                    <p class="font-medium text-secondary mb-10 leading-relaxed max-w-md">Passionate about designing reliable, structured, and efficient systems that solve operational challenges from small scale applications to <span class="text-dark font-bold dark:text-white">INDUSTRIAL</span> solutions oriented.</p>
+                    <p class="font-medium text-secondary mb-10 leading-relaxed max-w-md">Passionate about designing
+                        reliable, structured, and efficient systems that solve operational challenges from small scale
+                        applications to <span class="text-dark font-bold dark:text-white">INDUSTRIAL</span> solutions
+                        oriented.</p>
 
-                    <a href="#" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact Me</a>
+                    <a href="#"
+                        class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Contact
+                        Me</a>
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2">
-                    <div class="relative mt-10 lg:mt-9 lg:right-0 float-animation">
-                        <img src="src/img/Me (remove bg).png" alt="Hilman Syahid Effrianto" class="relative z-10 max-w-full mx-auto">
-                        <span class="absolute -bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
+                    <div class="relative mt-10 lg:mt-9">
+                        <span class="absolute -bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-110">
                             <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="#14b8a6" d="M48,-52.2C59.2,-36.8,63.3,-18.4,61.6,-1.7C59.9,15,52.5,30,41.2,39.8C30,49.6,15,54.2,1.1,53C-12.7,51.9,-25.5,45.1,-40.4,35.3C-55.3,25.5,-72.4,12.7,-73.3,-0.9C-74.3,-14.6,-59.1,-29.3,-44.2,-44.8C-29.3,-60.2,-14.6,-76.6,1.9,-78.4C18.4,-80.3,36.8,-67.7,48,-52.2Z" transform="translate(100 100)scale(1.1)" />
-                              </svg>
+                                <path fill="#14b8a6"
+                                    d="M48,-52.2C59.2,-36.8,63.3,-18.4,61.6,-1.7C59.9,15,52.5,30,41.2,39.8C30,49.6,15,54.2,1.1,53C-12.7,51.9,-25.5,45.1,-40.4,35.3C-55.3,25.5,-72.4,12.7,-73.3,-0.9C-74.3,-14.6,-59.1,-29.3,-44.2,-44.8C-29.3,-60.2,-14.6,-76.6,1.9,-78.4C18.4,-80.3,36.8,-67.7,48,-52.2Z"
+                                    transform="translate(100 100)scale(1.1)" />
+                            </svg>
                         </span>
+                        <img src="src/img/Me (remove)2 .png" alt="Hilman Syahid"
+                            class="relative z-10 max-w-[280px] md:max-w-[380px] lg:ml-auto lg:mr-0 mx-auto">
                     </div>
                 </div>
             </div>
@@ -142,45 +202,83 @@
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="pt-36 pb-32 dark:bg-dark section-reveal">   
+    <section id="about" class="pt-36 pb-32 dark:bg-dark section-reveal">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2 ">
                     <h4 class="font-bold uppercase text-primary text-lg mb-3 lg:text-4xl">About Me</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">Let you know about me!</h2>
-                    <p class="font-medium text-base text-secondary max-w-xl">I am an Automation Engineering student at the Polytechnic of Manufacturing Bandung, specializing in Industrial Informatics Engineering Technology.
-                    I have experience in developing software solutions that address real operational needs across MSMEs, educational institutions, and organizations. My work focuses on building systems that are practical, usable, and relevant to real-world conditions.
-                    I am particularly interested in system integration, data-driven applications, and the application of software engineering in industrial and large-scale environments..</p>
+                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-4xl dark:text-white">Let you know
+                        about me!</h2>
+                    <p class="font-medium text-base text-secondary max-w-xl">I am an Automation Engineering student at
+                        the Polytechnic of Manufacturing Bandung, specializing in Industrial Informatics Engineering
+                        Technology.
+                        I have experience in developing software solutions that address real operational needs across
+                        MSMEs, educational institutions, and organizations. My work focuses on building systems that are
+                        practical, usable, and relevant to real-world conditions.
+                        I am particularly interested in system integration, data-driven applications, and the
+                        application of software engineering in industrial and large-scale environments..</p>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">Let's Friend </h3>
-                    <p class="font-medium text-secondary mb-6 lg:text-lg">Follow my social media to explore about me. If you intrested to know about me</p>
+                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">Let's Friend
+                    </h3>
+                    <p class="font-medium text-secondary mb-6 lg:text-lg">Follow my social media to explore about me. If
+                        you intrested to know about me</p>
                     <div class="flex items-center">
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/syahilman_id/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" width="20" class="fill-current"viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
+                        <a href="https://www.instagram.com/syahilman_id/" target="_blank"
+                            class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>Instagram</title>
+                                <path
+                                    d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+                            </svg>
                         </a>
 
 
                         <!-- Facebook -->
-                        <a href="https://www.facebook.com/hilmansyahid.effrianto" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+                        <a href="https://www.facebook.com/hilmansyahid.effrianto" target="_blank"
+                            class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>Facebook</title>
+                                <path
+                                    d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+                            </svg>
 
-                            
+
                         </a>
 
                         <!-- X / Twitter -->
-                        <a href="https://x.com/SyahidHilman07" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                        <a href="https://x.com/SyahidHilman07" target="_blank"
+                            class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>X</title>
+                                <path
+                                    d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                            </svg>
                         </a>
 
                         <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/in/hilman-syahid-effrianto-507351272/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        <a href="https://www.linkedin.com/in/hilman-syahid-effrianto-507351272/" target="_blank"
+                            class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>LinkedIn</title>
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
                         </a>
                         <!-- TikTok -->
-                        <a href="https://www.tiktok.com/@syahid.hilman_0709" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
-                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                        <a href="https://www.tiktok.com/@syahid.hilman_0709" target="_blank"
+                            class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white">
+                            <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <title>TikTok</title>
+                                <path
+                                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                            </svg>
                         </a>
                     </div>
                 </div>
@@ -190,26 +288,34 @@
     <!-- About Section End -->
 
     <!-- Portfolio Section Start -->
-     <section id="portfolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800 section-reveal">
+    <section id="portfolio" class="pt-36 pb-16 bg-slate-100 dark:bg-slate-800 section-reveal">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Portofolio</h4>
                     <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl
                     lg:text-5xl dark:text-white">Recent Project</h2>
-                    <p class="font-medium text-md text-secondary md:text-lg">My latest project that I created with my team. from a landing page for a company to a student association website. 
+                    <p class="font-medium text-md text-secondary md:text-lg">My latest project that I created with my
+                        team. from a landing page for a company to a student association website.
                     </p>
                 </div>
             </div>
-            
+
             <div class="w-full px-4 flex flex-wrap justify-center xl:w-10/12 xl:mx-auto">
                 <div class="mb-12 p-4 md:w-1/2 group">
                     <div class="relative rounded-md shadow-md overflow-hidden">
-                        <img src="src/img/portfolio/SCADA.jpg" alt="PLC Monitoring" class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
-                        <span style="position: absolute; top: 16px; right: 16px; z-index: 50; background-color: #14b8a6; color: white; font-size: 10px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.1em; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">Upcoming</span>
+                        <img src="src/img/portfolio/SCADA.jpg" alt="PLC Monitoring"
+                            class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
+                        <span
+                            style="position: absolute; top: 16px; right: 16px; z-index: 50; background-color: #14b8a6; color: white; font-size: 10px; font-weight: bold; padding: 4px 12px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.1em; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);">Upcoming</span>
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">PLC Remote Control & Monitoring</h3>
-                    <p class="font-medium text-base text-secondary">Proposal TA (Final Project): A web application designed for remote monitoring and control of PLC systems via REST API.
+                    <h3
+                        class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">
+                        PLC Remote Control & Monitoring</h3>
+                    <p class="font-medium text-base text-secondary">Proposed Final Project – Politeknik Manufaktur
+                        Bandung
+                        A web-based system for real-time monitoring and remote control of PLC devices via RESTful API.
+                        Designed as a foundation for Digital Twin visualization and AI-assisted industrial operations.
                     </p>
                     <div class="mt-5 flex items-center gap-4">
                         <!-- <a href="#" class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Details</a> -->
@@ -219,99 +325,139 @@
 
                 <div class="mb-12 p-4 md:w-1/2 group">
                     <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/img/portfolio/ababil-cctv.png" alt="Ababil Tech" class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
+                        <img src="src/img/portfolio/ababil-cctv.png" alt="Ababil Tech"
+                            class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">Ababil Tech Profile</h3>
-                    <p class="font-medium text-base text-secondary">An company profile website about tech industry. Using PHP and also boostrap to design visual of the web.</p>
-                    <div class="mt-5 flex items-center gap-4">
-                        <a href="https://ababhil-tech.vercel.app/" class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Live Demo</a>
-                        <a href="https://github.com/HilmanSyahid007/ababhil-tech" class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
-                    </div>
-                </div>
-
-                <div class="mb-12 p-4 md:w-1/2 group">
-                    <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/img/portfolio/karhutla.png" alt="KARHUTLA" class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
-                    </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">KARHUTLA Monitoring</h3>
-                    <p class="font-medium text-base text-secondary">Monitoring and prevention system for forest and land fires. Using visual basic .NET for design software.</p>
-                    <div class="mt-5 flex items-center gap-4">
-                        <a href="https://hilmansyahid007.github.io/KARHUTLA/" class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Live Demo</a>
-                        <a href="https://github.com/HilmanSyahid007/KARHUTLA" class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
+                    <h3
+                        class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">
+                        Ababil Tech Profile</h3>
+                    <p class="font-medium text-base text-secondary">An company profile website about tech industry.
+                        Using PHP and also boostrap to design visual of the web.</p>
+                    <div class="mt-5 flex items-center">
+                        <a href="https://ababhil-tech.vercel.app/"
+                            class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300 mr-3">Live
+                            Demo</a>
+                        <a href="https://github.com/HilmanSyahid007/ababhil-tech"
+                            class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
                     </div>
                 </div>
 
                 <div class="mb-12 p-4 md:w-1/2 group">
                     <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/img/portfolio/WhatsApp Image 2026-04-16 at 9.09.17 AM.jpeg" alt="Document Control System" class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
+                        <img src="src/img/portfolio/karhutla.png" alt="KARHUTLA"
+                            class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">Document Control System</h3>
-                    <p class="font-medium text-base text-secondary">Monitoring and Controlling document in production process area especially in manufacturing industry.</p>
+                    <h3
+                        class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">
+                        KARHUTLA Monitoring</h3>
+                    <p class="font-medium text-base text-secondary">Monitoring and prevention system for forest and land
+                        fires. Using visual basic .NET for design software.</p>
+                    <div class="mt-5 flex items-center">
+                        <a href="https://hilmansyahid007.github.io/KARHUTLA/"
+                            class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300 mr-3">Live
+                            Demo</a>
+                        <a href="https://github.com/HilmanSyahid007/KARHUTLA"
+                            class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="mb-12 p-4 md:w-1/2 group">
+                    <div class="rounded-md shadow-md overflow-hidden">
+                        <img src="src/img/portfolio/WhatsApp Image 2026-04-16 at 9.09.17 AM.jpeg"
+                            alt="Document Control System"
+                            class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
+                    </div>
+                    <h3
+                        class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">
+                        Document Control System</h3>
+                    <p class="font-medium text-base text-secondary">Monitoring and Controlling document in production
+                        process area especially in manufacturing industry.</p>
                     <div class="mt-5 flex items-center gap-4">
                         <!-- <a href="#" class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Live Demo</a> -->
-                        <a href="https://github.com/DhafinQ/document-control-system/tree/main" class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
+                        <a href="https://github.com/DhafinQ/document-control-system/tree/main"
+                            class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
                     </div>
                 </div>
 
                 <div class="mb-12 p-4 md:w-1/2 group">
                     <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/img/portfolio/himamo.png" alt="HIMAMO" class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
+                        <img src="src/img/portfolio/himamo.png" alt="HIMAMO"
+                            class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">HIMAMO Website</h3>
-                    <p class="font-medium text-base text-secondary">The website was created by Web Development and UI/UX Team from HIMAMO. For student information and learning modules.</p>
-                    <div class="mt-5 flex items-center gap-4">
-                        <a href="https://himamopolman.com/" class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Live Demo</a>
-                        <a href="https://github.com/HIMAMO-Project/web-himamo" class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
+                    <h3
+                        class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">
+                        HIMAMO Website</h3>
+                    <p class="font-medium text-base text-secondary">The website was created by Web Development and UI/UX
+                        Team from HIMAMO. For student information and learning modules.</p>
+                    <div class="mt-5 flex items-center">
+                        <a href="https://himamopolman.com/"
+                            class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300 mr-3">Live
+                            Demo</a>
+                        <a href="https://github.com/HIMAMO-Project/web-himamo"
+                            class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
                     </div>
                 </div>
 
                 <div class="mb-12 p-4 md:w-1/2 group">
                     <div class="rounded-md shadow-md overflow-hidden">
-                        <img src="src/img/portfolio/Rajendra Ticketing.png" alt="Rajendra Travel" class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
+                        <img src="src/img/portfolio/Rajendra Ticketing.png" alt="Rajendra Travel"
+                            class="w-full h-48 md:h-60 object-cover transition duration-500 group-hover:scale-110">
                     </div>
-                    <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">Rajendra Travel – Ticketing System</h3>
-                    <p class="font-medium text-base text-secondary">Developed a comprehensive ticketing and reservation system for shuttle services with real-time management.</p>
-                    <div class="mt-5 flex items-center gap-4">
-                        <a href="https://hilmansyahid007.github.io/RajendraTours/" class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Live Demo</a>
-                        <a href="https://github.com/HilmanSyahid007/RajendraTours" class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
+                    <h3
+                        class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white group-hover:text-primary transition duration-300">
+                        Rajendra Travel – Ticketing System</h3>
+                    <p class="font-medium text-base text-secondary">Developed a comprehensive ticketing and reservation
+                        system for shuttle services with real-time management.</p>
+                    <div class="mt-5 flex items-center">
+                        <a href="https://hilmansyahid007.github.io/RajendraTours/"
+                            class="text-xs font-bold text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300 mr-3">Live
+                            Demo</a>
+                        <a href="https://github.com/HilmanSyahid007/RajendraTours"
+                            class="text-xs font-bold text-primary border border-primary py-2 px-4 rounded-lg hover:bg-primary hover:text-white transition duration-300">GitHub</a>
                     </div>
                 </div>
             </div>
         </div>
-     </section>
+    </section>
     <!-- Portfolio Section End -->
 
     <!-- Clients Section Start -->
-     <section id="skills" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300 section-reveal">
+    <section id="skills" class="pt-36 pb-32 bg-slate-800 dark:bg-slate-300 section-reveal">
         <div class="container">
             <div class="w-full px-4">
                 <div class="mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Skills</h4>
                     <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl
                     lg:text-5xl dark:text-dark">Technology & Framework Tools</h2>
-                    <p class="font-medium text-md text-secondary md:text-lg">There is the technology and framework tools i always used and learn.
+                    <p class="font-medium text-md text-secondary md:text-lg">There is the technology and framework tools
+                        i always used and learn.
                     </p>
                 </div>
             </div>
 
             <div class="w-full px-4">
                 <div class="flex flex-wrap items-center justify-center">
-                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                    <a href="#"
+                        class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
                         <img src="src/img/skills/html-5.svg" alt="HTML">
                     </a>
-                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                    <a href="#"
+                        class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
                         <img src="src/img/skills/css-3-svgrepo-com.svg" alt="CSS">
                     </a>
-                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                    <a href="#"
+                        class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
                         <img src="src/img/skills/javascript-svgrepo-com.svg" alt="JavaScript">
                     </a>
                     <!-- <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
                         <img src="src/img/skills/figma-svgrepo-com.svg" alt="Figma">
                     </a> -->
-                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                    <a href="#"
+                        class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
                         <img src="src/img/skills/bootstrap-svgrepo-com.svg" alt="Bootstrap">
                     </a>
-                    <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
+                    <a href="#"
+                        class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
                         <img src="src/img/skills/tailwind-svgrepo-com.svg" alt="Tailwind">
                     </a>
                     <!-- <a href="#" class="max-w-[120px] mx-4 py-4 grayscale opacity-60 transition duration-500 hover:grayscale-0 hover:opacity-100 lg:mx-6 xl:mx-8">
@@ -320,73 +466,95 @@
                 </div>
             </div>
         </div>
-     </section>
+    </section>
     <!-- clients Section End -->
 
     <!-- Blog Section Start -->
-     <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark section-reveal">
+    <section id="blog" class="pt-36 pb-32 bg-slate-100 dark:bg-dark section-reveal">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
                     <h4 class="font-semibold text-lg text-primary mb-2">Blog</h4>
                     <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl
                     lg:text-5xl dark:text-white">Recent Posts</h2>
-                    <p class="font-medium text-md text-secondary md:text-lg">My recent post about my daily life as a student & IT enthusiast.
+                    <p class="font-medium text-md text-secondary md:text-lg">My recent post about my daily life as a
+                        student & IT enthusiast.
                     </p>
                 </div>
             </div>
 
             <div class="flex flex-wrap">
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3 group">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 transition duration-300 hover:shadow-2xl">
+                    <div
+                        class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 transition duration-300 hover:shadow-2xl">
                         <div class="overflow-hidden">
-                            <img src="src/img/blog/baparekraf_2023.png" alt="keamanan" class="w-full transition duration-500 group-hover:scale-105">
+                            <img src="src/img/blog/baparekraf_2023.png" alt="keamanan"
+                                class="w-full transition duration-500 group-hover:scale-105">
                         </div>
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="https://bdd.kemenparekraf.go.id/" class="block mb-3 font-semibold text-xl text-dark group-hover:text-primary transition duration-300 truncate dark:text-white">Baparekraf Developer Day 2023
+                                <a href="https://bdd.kemenparekraf.go.id/"
+                                    class="block mb-3 font-semibold text-xl text-dark group-hover:text-primary transition duration-300 truncate dark:text-white">Baparekraf
+                                    Developer Day 2023
                                 </a>
-                                </h3>
-                            <p class="font-medium text-base text-secondary mb-6">Baparekraf Developer Day is an event organized by the Ministry of Tourism and Creative Economy.</p>
-                            <a href="https://bdd.kemenparekraf.go.id/" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Read more</a>
+                            </h3>
+                            <p class="font-medium text-base text-secondary mb-6">Baparekraf Developer Day is an event
+                                organized by the Ministry of Tourism and Creative Economy.</p>
+                            <a href="https://bdd.kemenparekraf.go.id/"
+                                class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Read
+                                more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3 group">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 transition duration-300 hover:shadow-2xl">
+                    <div
+                        class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 transition duration-300 hover:shadow-2xl">
                         <div class="overflow-hidden">
-                            <img src="src/img/blog/Hilman Syahid Effrianto.png" alt="monitoring" class="w-full transition duration-500 group-hover:scale-105">
+                            <img src="src/img/blog/Hilman Syahid Effrianto.png" alt="monitoring"
+                                class="w-full transition duration-500 group-hover:scale-105">
                         </div>
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="https://ito.itsa.pcr.ac.id/" class="block mb-3 font-semibold text-xl text-dark group-hover:text-primary transition duration-300 truncate dark:text-white">ITO (Information Technology Olympiad)</a>
-                                </h3>
-                            <p class="font-medium text-base text-secondary mb-6">ITO (Information Technology Olympiad) X is one of the annual routine activities carried out by ITSA PCR.</p>
-                            <a href="https://ito.itsa.pcr.ac.id/" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Read more</a>
+                                <a href="https://ito.itsa.pcr.ac.id/"
+                                    class="block mb-3 font-semibold text-xl text-dark group-hover:text-primary transition duration-300 truncate dark:text-white">ITO
+                                    (Information Technology Olympiad)</a>
+                            </h3>
+                            <p class="font-medium text-base text-secondary mb-6">ITO (Information Technology Olympiad) X
+                                is one of the annual routine activities carried out by ITSA PCR.</p>
+                            <a href="https://ito.itsa.pcr.ac.id/"
+                                class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Read
+                                more</a>
                         </div>
                     </div>
                 </div>
                 <div class="w-full px-4 lg:w-1/2 xl:w-1/3 group">
-                    <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 transition duration-300 hover:shadow-2xl">
+                    <div
+                        class="bg-white rounded-xl shadow-lg overflow-hidden mb-10 dark:bg-slate-800 transition duration-300 hover:shadow-2xl">
                         <div class="overflow-hidden">
-                            <img src="src/img/blog/WhatsApp Image 2024-11-30 at 18.54.01_97c7adfd.jpg" alt="kerjasama" class="w-full transition duration-500 group-hover:scale-105">
+                            <img src="src/img/blog/WhatsApp Image 2024-11-30 at 18.54.01_97c7adfd.jpg" alt="kerjasama"
+                                class="w-full transition duration-500 group-hover:scale-105">
                         </div>
                         <div class="py-8 px-6">
                             <h3>
-                                <a href="https://gdg.community.dev/events/details/google-gdg-cloud-bandung-presents-cloud-devfest-bandung-2024/" class="block mb-3 font-semibold text-xl text-dark group-hover:text-primary transition duration-300 truncate dark:text-white">Participate in CLOUD DevFest Bandung</a>
-                                </h3>
-                            <p class="font-medium text-base text-secondary mb-6">Cloud DevFest Bandung is an annual developer festival organized by the Google Developer Group (GDG) Cloud community.</p>
-                            <a href="https://gdg.community.dev/gdg-bandung/" class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Read more</a>
+                                <a href="https://gdg.community.dev/events/details/google-gdg-cloud-bandung-presents-cloud-devfest-bandung-2024/"
+                                    class="block mb-3 font-semibold text-xl text-dark group-hover:text-primary transition duration-300 truncate dark:text-white">Participate
+                                    in CLOUD DevFest Bandung</a>
+                            </h3>
+                            <p class="font-medium text-base text-secondary mb-6">Cloud DevFest Bandung is an annual
+                                developer festival organized by the Google Developer Group (GDG) Cloud community.</p>
+                            <a href="https://gdg.community.dev/gdg-bandung/"
+                                class="font-medium text-sm text-white bg-primary py-2 px-4 rounded-lg hover:opacity-80 transition duration-300">Read
+                                more</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-     </section>
+    </section>
     <!-- Blog Section Start -->
 
     <!-- Contact Section Start -->
-     <section id="contact" class="pt-36 pb-32 dark:bg-slate-800 section-reveal">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800 section-reveal">
         <div class="container">
             <div class="w-full px-4">
                 <div class="w-full px-4">
@@ -394,7 +562,8 @@
                         <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
                         <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl
                         lg:text-5xl dark:text-white">Contact Me</h2>
-                        <p class="font-medium text-md text-secondary md:text-lg">Feel free to reach out for collaboration or opportunities!
+                        <p class="font-medium text-md text-secondary md:text-lg">Feel free to reach out for
+                            collaboration or opportunities!
                         </p>
                     </div>
                 </div>
@@ -403,28 +572,32 @@
                     <div class="w-full lg:w-2/3 lg:mx-auto">
                         <div class="w-full px-4 mb-8">
                             <label for="name" class="text-base text-primary font-bold">Name</label>
-                            <input type="text" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+                            <input type="text" id="name"
+                                class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
                         </div>
                         <div class="w-full px-4 mb-8">
                             <label for="email" class="text-base text-primary font-bold">Email</label>
-                            <input type="email" id="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+                            <input type="email" id="email"
+                                class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
                         </div>
                         <div class="w-full px-4 mb-8">
                             <label for="message" class="text-base text-primary font-bold">Message</label>
-                            <textarea id="message" name="message" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
+                            <textarea id="message" name="message"
+                                class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-32"></textarea>
                         </div>
                         <div class="w-full px-4">
-                            <button class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500">Send</button>
+                            <button
+                                class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500">Send</button>
                         </div>
                     </div>
-            </form>
+                </form>
             </div>
         </div>
-     </section>
+    </section>
     <!-- Contact Section End -->
 
     <!-- Footer Section Start -->
-     <footer class="bg-dark pt-24 pb-12">
+    <footer class="bg-dark pt-24 pb-12">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-12 text-slate-300 font-medium md:w-1/3">
@@ -438,13 +611,15 @@
                     <h3 class="font-semibold text-xl text-white mb-5">Writing Category</h3>
                     <ul class="text-slate-300">
                         <li>
-                            <a href="#" class="inline-block text-base hover:text-primary mb-3">Landing Page Of Company</a>
+                            <a href="#" class="inline-block text-base hover:text-primary mb-3">Landing Page Of
+                                Company</a>
                         </li>
                         <li>
                             <a href="#" class="inline-block text-base hover:text-primary mb-3">Project Campus</a>
                         </li>
                         <li>
-                            <a href="#" class="inline-block text-base hover:text-primary mb-3">Website Organize of Campus</a>
+                            <a href="#" class="inline-block text-base hover:text-primary mb-3">Website Organize of
+                                Campus</a>
                         </li>
                     </ul>
                 </div>
@@ -476,44 +651,79 @@
             <div class="w-full pt-10 border-t border-slate-700">
                 <div class="flex items-center justify-center mb-5">
                     <!-- Instagram -->
-                    <a href="https://www.instagram.com/syahilman_id/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
-                        <svg role="img" width="20" class="fill-current"viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077"/></svg>
+                    <a href="https://www.instagram.com/syahilman_id/" target="_blank"
+                        class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>Instagram</title>
+                            <path
+                                d="M7.0301.084c-1.2768.0602-2.1487.264-2.911.5634-.7888.3075-1.4575.72-2.1228 1.3877-.6652.6677-1.075 1.3368-1.3802 2.127-.2954.7638-.4956 1.6365-.552 2.914-.0564 1.2775-.0689 1.6882-.0626 4.947.0062 3.2586.0206 3.6671.0825 4.9473.061 1.2765.264 2.1482.5635 2.9107.308.7889.72 1.4573 1.388 2.1228.6679.6655 1.3365 1.0743 2.1285 1.38.7632.295 1.6361.4961 2.9134.552 1.2773.056 1.6884.069 4.9462.0627 3.2578-.0062 3.668-.0207 4.9478-.0814 1.28-.0607 2.147-.2652 2.9098-.5633.7889-.3086 1.4578-.72 2.1228-1.3881.665-.6682 1.0745-1.3378 1.3795-2.1284.2957-.7632.4966-1.636.552-2.9124.056-1.2809.0692-1.6898.063-4.948-.0063-3.2583-.021-3.6668-.0817-4.9465-.0607-1.2797-.264-2.1487-.5633-2.9117-.3084-.7889-.72-1.4568-1.3876-2.1228C21.2982 1.33 20.628.9208 19.8378.6165 19.074.321 18.2017.1197 16.9244.0645 15.6471.0093 15.236-.005 11.977.0014 8.718.0076 8.31.0215 7.0301.0839m.1402 21.6932c-1.17-.0509-1.8053-.2453-2.2287-.408-.5606-.216-.96-.4771-1.3819-.895-.422-.4178-.6811-.8186-.9-1.378-.1644-.4234-.3624-1.058-.4171-2.228-.0595-1.2645-.072-1.6442-.079-4.848-.007-3.2037.0053-3.583.0607-4.848.05-1.169.2456-1.805.408-2.2282.216-.5613.4762-.96.895-1.3816.4188-.4217.8184-.6814 1.3783-.9003.423-.1651 1.0575-.3614 2.227-.4171 1.2655-.06 1.6447-.072 4.848-.079 3.2033-.007 3.5835.005 4.8495.0608 1.169.0508 1.8053.2445 2.228.408.5608.216.96.4754 1.3816.895.4217.4194.6816.8176.9005 1.3787.1653.4217.3617 1.056.4169 2.2263.0602 1.2655.0739 1.645.0796 4.848.0058 3.203-.0055 3.5834-.061 4.848-.051 1.17-.245 1.8055-.408 2.2294-.216.5604-.4763.96-.8954 1.3814-.419.4215-.8181.6811-1.3783.9-.4224.1649-1.0577.3617-2.2262.4174-1.2656.0595-1.6448.072-4.8493.079-3.2045.007-3.5825-.006-4.848-.0608M16.953 5.5864A1.44 1.44 0 1 0 18.39 4.144a1.44 1.44 0 0 0-1.437 1.4424M5.8385 12.012c.0067 3.4032 2.7706 6.1557 6.173 6.1493 3.4026-.0065 6.157-2.7701 6.1506-6.1733-.0065-3.4032-2.771-6.1565-6.174-6.1498-3.403.0067-6.156 2.771-6.1496 6.1738M8 12.0077a4 4 0 1 1 4.008 3.9921A3.9996 3.9996 0 0 1 8 12.0077" />
+                        </svg>
                     </a>
 
 
                     <!-- Facebook -->
-                    <a href="https://www.facebook.com/hilmansyahid.effrianto" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
-                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+                    <a href="https://www.facebook.com/hilmansyahid.effrianto" target="_blank"
+                        class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>Facebook</title>
+                            <path
+                                d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z" />
+                        </svg>
 
-                        
+
                     </a>
 
                     <!-- X / Twitter -->
-                    <a href="https://x.com/SyahidHilman07" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
-                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+                    <a href="https://x.com/SyahidHilman07" target="_blank"
+                        class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>X</title>
+                            <path
+                                d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                        </svg>
                     </a>
 
                     <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/hilman-syahid-effrianto-507351272/" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
-                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>LinkedIn</title><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <a href="https://www.linkedin.com/in/hilman-syahid-effrianto-507351272/" target="_blank"
+                        class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>LinkedIn</title>
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
                     </a>
                     <!-- TikTok -->
-                    <a href="https://www.tiktok.com/@syahid.hilman_0709" target="_blank" class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
-                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                    <a href="https://www.tiktok.com/@syahid.hilman_0709" target="_blank"
+                        class="w-9 h-9 mr-3 rounded-full flex justify-center items-center border border-slate-300 text-slate-300 hover:border-primary hover:bg-primary hover:text-white hover:scale-110 hover:shadow-lg">
+                        <svg role="img" width="20" class="fill-current" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <title>TikTok</title>
+                            <path
+                                d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
+                        </svg>
                     </a>
                 </div>
             </div>
-            <p class="font-medium text-xs text-slate-500 text-center">Made with <span class="text-pink-500">❤️</span> <a href="https://www.linkedin.com/in/hilman-syahid-effrianto-507351272/" target="_blank" class="font-bold text-primary">Hilman Syahid Effrianto.</a></p>
+            <p class="font-medium text-xs text-slate-500 text-center">Made with <span class="text-pink-500">❤️</span> <a
+                    href="https://www.linkedin.com/in/hilman-syahid-effrianto-507351272/" target="_blank"
+                    class="font-bold text-primary">Hilman Syahid Effrianto.</a></p>
         </div>
-     </footer>
+    </footer>
     <!-- Footer Section End -->
 
     <!-- Back to top Start-->
-     <a href="#home" class="fixed bottom-4 right-4 z-[9999] h-14 w-14 rounded-full bg-primary p-4 justify-center items-center hover:animate-pulse hidden" id="to-top">
+    <a href="#home"
+        class="fixed bottom-4 right-4 z-[9999] h-14 w-14 rounded-full bg-primary p-4 justify-center items-center hover:animate-pulse hidden"
+        id="to-top">
         <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45  mt-2"></span>
-     </a>
+    </a>
     <!-- Back to top End-->
 
     <script src="src/js/script.js"></script>
 </body>
+
 </html>
