@@ -77,5 +77,80 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Typing Animation Logic
+    const typingText = document.querySelector('#typing-text');
+    const roles = [
+        'Software Engineer', 
+        'Industrial Automation Specialist', 
+        'Industrial Informatics Technologist',
+        'System Integration Expert'
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeSpeed = 100;
+
+    function type() {
+        const currentRole = roles[roleIndex];
+        
+        if (isDeleting) {
+            typingText.textContent = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+            typeSpeed = 50;
+        } else {
+            typingText.textContent = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+            typeSpeed = 100;
+        }
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            isDeleting = true;
+            typeSpeed = 2000; // Pause at the end
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    if (typingText) type();
+
+    // Scroll Reveal Animation (Intersection Observer)
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-visible');
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.section-reveal').forEach(section => {
+        revealObserver.observe(section);
+    });
+
+    // Scroll Spy (Active Navigation Highlighting)
+    const navLinks = document.querySelectorAll('.nav-link');
+    const spyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                navLinks.forEach(link => {
+                    link.classList.remove('text-primary');
+                    link.classList.add('text-dark', 'dark:text-white');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-dark', 'dark:text-white');
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('section').forEach(section => {
+        spyObserver.observe(section);
+    });
 });
 
